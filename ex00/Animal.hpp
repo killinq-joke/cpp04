@@ -6,7 +6,7 @@
 /*   By: mout <mout@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:13:45 by mout              #+#    #+#             */
-/*   Updated: 2021/11/06 15:16:56 by mout             ###   ########.fr       */
+/*   Updated: 2021/11/06 15:25:11 by mout             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,15 @@
 
 class Animal
 {
+
 public:
     Animal(void);
     ~Animal(void);
+    void    setType(std::string type);
+    std::string    getType(void) const;
+
 protected:
-    std::string type;
+    std::string _type;
 };
-
-Animal::Animal(/* args */)
-{
-}
-
-Animal::~Animal()
-{
-}
-
 
 #endif

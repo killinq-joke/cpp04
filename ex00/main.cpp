@@ -6,9 +6,16 @@
 /*   By: mout <mout@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:12:42 by mout              #+#    #+#             */
-/*   Updated: 2021/11/06 15:13:16 by mout             ###   ########.fr       */
+/*   Updated: 2021/11/06 15:47:38 by mout             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include "Cat.hpp"
+
+int main(void)
+{
+    Dog a = Dog();
+    std::cout << a.getType() << std::endl;
+    return (0);
+}

@@ -1,6 +1,6 @@
 CC		= clang++
 NAME	= exec
-SRCS	= main.cpp 
+SRCS	= main.cpp Animal.cpp Cat.cpp Dog.cpp
 OBJS	= $(SRCS:cpp=o)
 
 all: $(NAME)
