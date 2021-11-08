@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mout <mout@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:41:47 by mout              #+#    #+#             */
-/*   Updated: 2021/11/06 15:42:46 by mout             ###   ########.fr       */
+/*   Updated: 2021/11/08 15:23:08 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,9 @@ Dog::Dog(void)
 Dog::~Dog(void)
 {
     std::cout << "Dog Destructor" << std::endl;
+}
+
+void    Dog::makeSound(void) const
+{
+    std::cout << "Woof" << std::endl;
 }

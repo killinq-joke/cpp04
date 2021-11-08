@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 15:17:04 by mout              #+#    #+#             */
-/*   Updated: 2021/11/08 17:51:34 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/11/08 16:30:29 by ztouzri           #+#    #+#             */
+/*   Updated: 2021/11/08 18:03:26 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal(void)
+WrongAnimal::WrongAnimal(void)
 {
-    std::cout << "Animal constructor" << std::endl;
+    std::cout << "WrongAnimal constructor" << std::endl;
 }
 
-Animal::~Animal(void)
+WrongAnimal::~WrongAnimal(void)
 {
-    std::cout << "Animal destructor" << std::endl;
+    std::cout << "WrongAnimal destructor" << std::endl;
 }
 
-std::string    Animal::getType(void) const
+std::string    WrongAnimal::getType(void) const
 {
     return (this->_type);
 }
 
-void    Animal::makeSound(void) const
+void    WrongAnimal::makeSound(void) const
 {
-    std::cout << "I'm an Animal" << std::endl;
+    std::cout << "I'm a wrong Animal" << std::endl;
 }
 
-void    Animal::setType(std::string type)
+void    WrongAnimal::setType(std::string type)
 {
     this->_type = type;
 }

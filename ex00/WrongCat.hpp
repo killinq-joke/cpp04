@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 15:17:04 by mout              #+#    #+#             */
-/*   Updated: 2021/11/08 17:51:34 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/11/08 16:30:44 by ztouzri           #+#    #+#             */
+/*   Updated: 2021/11/08 18:43:22 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
+# include "WrongAnimal.hpp"
 
-Animal::Animal(void)
+class WrongCat : public WrongAnimal
 {
-    std::cout << "Animal constructor" << std::endl;
-}
+public:
+	WrongCat(void);
+	~WrongCat(void);
+    void	makeSound(void) const;
 
-Animal::~Animal(void)
-{
-    std::cout << "Animal destructor" << std::endl;
-}
+};
 
-std::string    Animal::getType(void) const
-{
-    return (this->_type);
-}
-
-void    Animal::makeSound(void) const
-{
-    std::cout << "I'm an Animal" << std::endl;
-}
-
-void    Animal::setType(std::string type)
-{
-    this->_type = type;
-}
+#endif

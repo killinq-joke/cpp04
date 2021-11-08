@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mout <mout@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:21:02 by mout              #+#    #+#             */
-/*   Updated: 2021/11/06 15:40:15 by mout             ###   ########.fr       */
+/*   Updated: 2021/11/08 15:22:16 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@ Cat::Cat(void)
 {
     this->setType("Cat");
     std::cout << "Cat Constructor" << std::endl;
+}
+
+void    Cat::makeSound(void) const
+{
+    std::cout << "Miaw" << std::endl;
 }
 
 Cat::~Cat(void)

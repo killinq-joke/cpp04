@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mout <mout@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:40:29 by mout              #+#    #+#             */
-/*   Updated: 2021/11/06 15:48:07 by mout             ###   ########.fr       */
+/*   Updated: 2021/11/08 17:56:09 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 # define DOG_HPP
 # include "Animal.hpp"
 
-class Dog : public Animal
+class Dog : virtual public Animal
 {
 public:
     Dog(void);
     ~Dog(void);
+    void    makeSound(void) const;
 };
 
 #endif
