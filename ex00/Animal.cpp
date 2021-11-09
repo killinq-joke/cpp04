@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:17:04 by mout              #+#    #+#             */
-/*   Updated: 2021/11/08 17:51:34 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/11/09 09:02:22 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,19 @@
 Animal::Animal(void)
 {
     std::cout << "Animal constructor" << std::endl;
+}
+
+Animal::Animal(Animal const & a1)
+{
+    this->setType(a1.getType());
+    std::cout << "Animal copy constructor" << std::endl;
+}
+
+Animal  Animal::operator=(Animal const & a1)
+{
+    this->setType(a1.getType());
+    std::cout << "Animal Assignation operator" << std::endl;
+    return (*this);
 }
 
 Animal::~Animal(void)

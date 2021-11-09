@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:41:47 by mout              #+#    #+#             */
-/*   Updated: 2021/11/08 19:29:44 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/11/09 13:23:42 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,26 @@ Dog::Dog(void)
     std::cout << "Dog Constructor" << std::endl;
 }
 
-Dog::Dog(Dog const & a1)
+Dog     Dog::operator=(Dog const & d1)
 {
-    this->setType(a1.getType());
-    std::cout << "Dog copy constructor" << std::endl;
-}
-
-Dog  Dog::operator=(Dog const & a1)
-{
-    this->setType(a1.getType());
-    std::cout << "Dog Assignation operator" << std::endl;
+    this->setType(d1.getType());
+    this->setBrain(new Brain(this->getBrain()));
     return (*this);
 }
 
 Dog::~Dog(void)
 {
     std::cout << "Dog Destructor" << std::endl;
+}
+
+void    Dog::setBrain(Brain * brain)
+{
+    this->_brain = brain;
+}
+
+Brain*   Dog::getBrain(void)
+{
+    return (this->_brain);
 }
 
 void    Dog::makeSound(void) const

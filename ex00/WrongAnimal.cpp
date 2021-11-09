@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 16:30:29 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/11/08 18:03:26 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/11/08 19:31:18 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,19 @@
 WrongAnimal::WrongAnimal(void)
 {
     std::cout << "WrongAnimal constructor" << std::endl;
+}
+
+WrongAnimal::WrongAnimal(WrongAnimal const & a1)
+{
+    this->setType(a1.getType());
+    std::cout << "WrongAnimal copy constructor" << std::endl;
+}
+
+WrongAnimal  WrongAnimal::operator=(WrongAnimal const & a1)
+{
+    this->setType(a1.getType());
+    std::cout << "WrongAnimal Assignation operator" << std::endl;
+    return (*this);
 }
 
 WrongAnimal::~WrongAnimal(void)

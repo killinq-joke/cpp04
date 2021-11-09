@@ -6,34 +6,47 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:21:02 by mout              #+#    #+#             */
-/*   Updated: 2021/11/08 19:29:50 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/11/09 13:27:33 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
+#include "Brain.hpp"
 
 Cat::Cat(void)
 {
     this->setType("Cat");
+    this->setBrain(new Brain());
     std::cout << "Cat Constructor" << std::endl;
 }
 
-Cat::Cat(Cat const & a1)
+Cat::Cat(Cat const & c1)
 {
-    this->setType(a1.getType());
-    std::cout << "Cat copy constructor" << std::endl;
+    this->setType(c1.getType());
+    this->setBrain(new Brain(c1))
+    std::cout << "Cat Copy Constructor" << std::endl;
 }
 
-Cat  Cat::operator=(Cat const & a1)
+Cat     Cat::operator=(Cat const & c1)
 {
-    this->setType(a1.getType());
+    this->setType(c1.getType());
+    this->setBrain(new Brain(c1))
     std::cout << "Cat Assignation operator" << std::endl;
-    return (*this);
 }
 
 void    Cat::makeSound(void) const
 {
     std::cout << "Miaw" << std::endl;
+}
+
+void    Cat::setBrain(Brain *brain)
+{
+    this->_brain = brain;
+}
+
+Brain*   Cat::getBrain(void) const
+{
+    return (this->_brain);
 }
 
 Cat::~Cat(void)

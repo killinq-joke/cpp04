@@ -6,13 +6,13 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:12:42 by mout              #+#    #+#             */
-/*   Updated: 2021/11/08 18:42:36 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/11/09 09:06:01 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongCat.hpp"
+#include "Dog.hpp"
 
 int main()
 {
@@ -29,6 +29,8 @@ int main()
     meta->makeSound();
     f->makeSound();
     k->makeSound();
+    delete k;
+    delete f;
     delete meta;
     delete j;
     delete i;

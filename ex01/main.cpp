@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 15:40:29 by mout              #+#    #+#             */
-/*   Updated: 2021/11/09 09:02:43 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/11/06 15:12:42 by mout              #+#    #+#             */
+/*   Updated: 2021/11/09 12:53:09 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
-# include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
-class Dog : virtual public Animal
+int main()
 {
-public:
-    Dog(void);
-    Dog(Dog const & a1);
-    Dog operator=(Dog const & a1);
-    ~Dog(void);
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-    void    makeSound(void) const;
-};
-
-#endif
+	delete j; //should not create a leak
+	delete i;
+	return (0);
+}

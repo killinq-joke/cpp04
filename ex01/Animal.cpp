@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 15:40:29 by mout              #+#    #+#             */
-/*   Updated: 2021/11/09 09:02:43 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/11/06 15:17:04 by mout              #+#    #+#             */
+/*   Updated: 2021/11/08 17:51:34 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
-# include "Animal.hpp"
+#include "Animal.hpp"
 
-class Dog : virtual public Animal
+Animal::Animal(void)
 {
-public:
-    Dog(void);
-    Dog(Dog const & a1);
-    Dog operator=(Dog const & a1);
-    ~Dog(void);
+    std::cout << "Animal constructor" << std::endl;
+}
 
-    void    makeSound(void) const;
-};
+Animal::~Animal(void)
+{
+    std::cout << "Animal destructor" << std::endl;
+}
 
-#endif
+std::string    Animal::getType(void) const
+{
+    return (this->_type);
+}
+
+void    Animal::makeSound(void) const
+{
+    std::cout << "I'm an Animal" << std::endl;
+}
+
+void    Animal::setType(std::string type)
+{
+    this->_type = type;
+}

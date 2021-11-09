@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 15:40:29 by mout              #+#    #+#             */
-/*   Updated: 2021/11/09 09:02:43 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/11/06 15:21:08 by mout              #+#    #+#             */
+/*   Updated: 2021/11/09 13:19:56 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 # include "Animal.hpp"
+# include "Brain.hpp"
 
-class Dog : virtual public Animal
+class Cat : virtual public Animal
 {
-public:
-    Dog(void);
-    Dog(Dog const & a1);
-    Dog operator=(Dog const & a1);
-    ~Dog(void);
 
+public:
+    Cat(void);
+	Cat(Cat const & b1);
+	Cat	operator=(Cat const & b1);
+    ~Cat(void);
     void    makeSound(void) const;
+    void    setBrain(Brain * brain);
+    Brain*  getBrain(void) const;
+
+private:
+    Brain   *_brain;
+
 };
 
 #endif
