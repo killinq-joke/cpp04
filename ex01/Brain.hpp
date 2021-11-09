@@ -18,8 +18,8 @@ class	Brain
 {
 public:
 	Brain(void);
-	Brain(Brain const & b1);
-	Brain	operator=(Brain const & b1);
+	Brain(Brain const *b1);
+	Brain	operator=(Brain const *b1);
 	~Brain(void);
 
 	std::string getIdea(unsigned int index) const;

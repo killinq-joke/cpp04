@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "Cat.hpp"
-#include "Brain.hpp"
 
 Cat::Cat(void)
 {
@@ -23,15 +22,23 @@ Cat::Cat(void)
 Cat::Cat(Cat const & c1)
 {
     this->setType(c1.getType());
-    this->setBrain(new Brain(c1))
+    this->setBrain(new Brain(c1.getBrain()));
     std::cout << "Cat Copy Constructor" << std::endl;
 }
 
 Cat     Cat::operator=(Cat const & c1)
 {
     this->setType(c1.getType());
-    this->setBrain(new Brain(c1))
+    this->setBrain(new Brain(c1.getBrain()));
     std::cout << "Cat Assignation operator" << std::endl;
+	return (*this);
+}
+
+Cat::~Cat(void)
+{
+	if (this->getBrain())
+		delete this->getBrain();
+	std::cout << "Cat destructor" << std::endl;
 }
 
 void    Cat::makeSound(void) const
@@ -47,9 +54,4 @@ void    Cat::setBrain(Brain *brain)
 Brain*   Cat::getBrain(void) const
 {
     return (this->_brain);
-}
-
-Cat::~Cat(void)
-{
-    std::cout << "Cat Destructor" << std::endl;
 }

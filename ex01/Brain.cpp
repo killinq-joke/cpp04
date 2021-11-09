@@ -17,22 +17,29 @@ Brain::Brain(void)
 	std::cout << "Brain Constructor" << std::endl;
 }
 
-Brain::Brain(Brain const & b1)
+Brain::Brain(Brain const *b1)
 {
-	for (int i = 0; i < 100; i++)
+	if (b1)
 	{
-		this->setIdea(i, b1.getIdea(i));
+		for (int i = 0; i < 100; i++)
+		{
+			this->setIdea(i, b1->getIdea(i));
+		}
 	}
 	std::cout << "Brain Copy Constructor" << std::endl;
 }
 
-Brain	Brain::operator=(Brain const & b1)
+Brain	Brain::operator=(Brain const *b1)
 {
-	for (int i = 0; i < 100; i++)
+	if (b1)
 	{
-		this->setIdea(i, b1.getIdea(i));
+		for (int i = 0; i < 100; i++)
+		{
+			this->setIdea(i, b1->getIdea(i));
+		}
 	}
 	std::cout << "Brain Assignation operator" << std::endl;
+	return (*this);
 }
 
 Brain::~Brain(void)
@@ -45,4 +52,10 @@ std::string Brain::getIdea(unsigned int index) const
 	if (index < 100)
 		return (this->_ideas[index]);
 	return (NULL);
+}
+
+void	Brain::setIdea(unsigned int index, std::string idea)
+{
+	if (index < 100)
+		this->_ideas[index] = idea;
 }

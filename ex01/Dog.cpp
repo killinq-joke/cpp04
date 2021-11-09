@@ -15,7 +15,14 @@
 Dog::Dog(void)
 {
     this->setType("Dog");
+	this->setBrain(new Brain());
     std::cout << "Dog Constructor" << std::endl;
+}
+
+Dog::Dog(Dog const & d1)
+{
+    this->setType(d1.getType());
+    this->setBrain(new Brain(this->getBrain()));
 }
 
 Dog     Dog::operator=(Dog const & d1)
@@ -27,6 +34,8 @@ Dog     Dog::operator=(Dog const & d1)
 
 Dog::~Dog(void)
 {
+	if (this->getBrain())
+		delete this->getBrain();
     std::cout << "Dog Destructor" << std::endl;
 }
 
