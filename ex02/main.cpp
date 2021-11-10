@@ -37,5 +37,8 @@ void	func()
 int main()
 {
 	func();
+	// use to show
+	// const	Animal* a = new Animal;
+	// delete a;
 	return (0);
 }

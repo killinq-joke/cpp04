@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 15:12:42 by mout              #+#    #+#             */
-/*   Updated: 2021/11/09 12:53:09 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/11/08 18:50:20 by ztouzri           #+#    #+#             */
+/*   Updated: 2021/11/09 13:15:12 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
+# include <iostream>
 
-void	func()
+class	Brain
 {
-	int	i = 0;
-	const	Animal* arr[10];
+public:
+	Brain(void);
+	Brain(Brain const *b1);
+	Brain	operator=(Brain const *b1);
+	~Brain(void);
 
-	while (i < 10)
-	{
-		if (i % 2)
-			arr[i] = new Dog();
-		else
-			arr[i] = new Cat();
-		i++;
-	}
-	i = 0;
-	while (i < 10)
-	{
-		delete arr[i];
-		i++;
-	}
-}
+	std::string getIdea(unsigned int index) const;
+	void		setIdea(unsigned int index, std::string idea);
 
-int main()
-{
-	func();
-	return (0);
-}
+private:
+	std::string _ideas[100];
+	
+};
+
+#endif

@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 15:17:04 by mout              #+#    #+#             */
-/*   Updated: 2021/11/08 17:51:34 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/11/10 15:57:28 by ztouzri           #+#    #+#             */
+/*   Updated: 2021/11/10 16:27:08 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "ICharacter.hpp"
 
-Animal::Animal(void)
+Character::Character(void)
 {
-    std::cout << "Animal constructor" << std::endl;
 }
 
-Animal::~Animal(void)
+Character::~Character(void)
 {
-    std::cout << "Animal destructor" << std::endl;
 }
 
-std::string    Animal::getType(void) const
+std::string const & Character::getName() const
 {
-    return (this->_type);
+	return (this->_name);
 }
 
-void    Animal::makeSound(void) const
+void	Character::equip(AMateria* m)
 {
-    std::cout << "I'm a " << this->getType() << std::endl;
+	this->_inventory[this->_count] = m;
 }
 
-void    Animal::setType(std::string type)
+void	Character::unequip(int idx)
 {
-    this->_type = type;
+	if (idx >= 0 && idx < 4)
+		this->_inventory[idx] = NULL;
+}
+
+void	Character::use(int idx, ICharacter& target)
+{
+	this->_inventory[idx].use(target);
 }

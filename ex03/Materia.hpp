@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Materia.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 15:12:42 by mout              #+#    #+#             */
-/*   Updated: 2021/11/09 12:53:09 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/11/10 16:29:52 by ztouzri           #+#    #+#             */
+/*   Updated: 2021/11/10 16:32:52 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef MATERIA_HPP
+# define MATERIA_HPP
+# include "AMateria.hpp"
 
-void	func()
+class Materia
 {
-	int	i = 0;
-	const	Animal* arr[10];
+public:
+	Materia(void);
+	~Materia(void);
 
-	while (i < 10)
-	{
-		if (i % 2)
-			arr[i] = new Dog();
-		else
-			arr[i] = new Cat();
-		i++;
-	}
-	i = 0;
-	while (i < 10)
-	{
-		delete arr[i];
-		i++;
-	}
-}
+	AMateria*	clone(void) const;
+	void		use(ICharacter& target);
+};
 
-int main()
-{
-	func();
-	return (0);
-}
+#endif
