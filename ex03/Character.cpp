@@ -6,37 +6,76 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 15:57:28 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/11/10 16:27:08 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/11/10 19:25:12 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ICharacter.hpp"
+#include "Character.hpp"
 
-Character::Character(void)
+Character::Character(std::string const & name) : _name(name)
 {
+	std::cout << "Character constructor" << std::endl;
+}
+
+Character	Character::operator=(Character const & c1)
+{
+	this->setName(c1.getName());
+	this->setCount(c1.getCount());
+	return (*this);
 }
 
 Character::~Character(void)
 {
-}
-
-std::string const & Character::getName() const
-{
-	return (this->_name);
+	std::cout << "Character destructor" << std::endl;
 }
 
 void	Character::equip(AMateria* m)
 {
-	this->_inventory[this->_count] = m;
+	if (this->getCount() < 4)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			if (!this->getInventory(i))
+				*this->getInventory(i) = *m;
+		}
+	}
 }
 
 void	Character::unequip(int idx)
 {
 	if (idx >= 0 && idx < 4)
-		this->_inventory[idx] = NULL;
+		*this->getInventory(idx) = NULL;
 }
 
 void	Character::use(int idx, ICharacter& target)
 {
-	this->_inventory[idx].use(target);
+	if (idx >= 0 && idx < 4)
+		this->getInventory(idx)->use(target);
+}
+
+unsigned int Character::getCount(void) const
+{
+	return (this->_count);
+}
+
+std::string	const &	Character::getName(void) const
+{
+	return (this->_name);
+}
+
+void			Character::setName(std::string name)
+{
+	this->_name = name;
+}
+
+void			Character::setCount(unsigned int count)
+{
+	this->_count = count;
+}
+
+AMateria*		Character::getInventory(unsigned int idx)
+{
+	if (idx >= 0 && idx < 4)
+		return (this->_inventory[idx]);
+	return (NULL);
 }

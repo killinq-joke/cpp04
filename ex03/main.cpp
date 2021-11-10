@@ -6,13 +6,16 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:12:42 by mout              #+#    #+#             */
-/*   Updated: 2021/11/10 16:00:58 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/11/10 17:24:40 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
+#include "Materia.hpp"
 
 int main()
 {
+	AMateria *ice = new Materia();
+	delete ice;
 	return (0);
 }
