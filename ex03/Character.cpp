@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 15:57:28 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/11/10 19:25:12 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/11/11 08:53:11 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	Character::equip(AMateria* m)
 void	Character::unequip(int idx)
 {
 	if (idx >= 0 && idx < 4)
-		*this->getInventory(idx) = NULL;
+		this->_inventory[idx] = nullptr;
 }
 
 void	Character::use(int idx, ICharacter& target)

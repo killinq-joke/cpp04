@@ -6,14 +6,20 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 16:29:23 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/11/10 18:30:21 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/11/11 09:04:57 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Materia.hpp"
 
-// Materia::Materia(std::string const & type) _type(type)
+// Materia::Materia(std::string const & type)
 // {
+// 	this->setType(type);
+// }
+
+// Materia::Materia(AMateria const & m1)
+// {
+// 	this->setType(m1.getType());
 // }
 
 Materia	Materia::operator=(AMateria const & a1)
@@ -28,7 +34,7 @@ Materia::~Materia(void)
 
 AMateria*	Materia::clone(void) const
 {
-	return ();
+	return (new Materia(*this));
 }
 
 void		Materia::use(ICharacter& target)
