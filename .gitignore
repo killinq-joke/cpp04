@@ -2,3 +2,4 @@
 exec
 .vscode
 .gitignore
+*.pdf
