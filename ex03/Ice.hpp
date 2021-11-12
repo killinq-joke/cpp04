@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 09:09:21 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/11/12 09:43:41 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/11/12 10:01:16 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,12 @@
 class Ice : public AMateria
 {
 public:
-	Ice(/* args */);
-	~Ice();
+	Ice(void);
+	Ice(Ice const & i1);
+	~Ice(void);
+
+	AMateria*	clone(void) const;
+	void		use(ICharacter& target);
 };
 
 #endif

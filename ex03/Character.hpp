@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 09:18:46 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/11/12 09:43:29 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/11/12 10:58:43 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ public:
 	~Character(void);
 
 	std::string const & getName(void) const;
-	void	 			setName(std::string const & name);
 	void				equip(AMateria* m);
 	void				unequip(int idx);
 	void				use(int idx, ICharacter& target);

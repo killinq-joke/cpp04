@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 08:53:37 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/11/12 09:36:09 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/11/12 09:59:46 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 	
 	std::string const & getType(void) const;
 
-	virtual AMateria* clone() const = 0;
+	virtual AMateria* clone(void) const = 0;
 	virtual void use(ICharacter& target);
 
 protected:

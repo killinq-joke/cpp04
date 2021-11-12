@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 09:17:40 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/11/12 09:51:04 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/11/12 15:44:12 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,21 @@
 
 Character::Character(std::string const & name) : _name(name)
 {
+	for (int i = 0; i < 4; i++)
+	{
+		this->inventory[i] = nullptr;
+	}
 	std::cout << "Character constructor" << std::endl;
 }
 
 Character::Character(Character const & c1) : _name(c1.getName())
 {
 	//copier inventaire
-	std::cout << "Character copy constructor" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		this->inventory[i] = c1.inventory[i];
 	}
+	std::cout << "Character copy constructor" << std::endl;
 }
 
 Character	Character::operator=(Character const & c1)
@@ -70,6 +74,6 @@ void				Character::unequip(int idx)
 
 void				Character::use(int idx, ICharacter& target)
 {
-	if (idx >= 0 && idx < 4)
+	if (idx >= 0 && idx < 4 && this->inventory[idx] != nullptr)
 		this->inventory[idx]->use(target);
 }

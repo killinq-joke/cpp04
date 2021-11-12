@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Amateria.cpp                                       :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/12 08:56:52 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/11/12 11:07:23 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/11/12 12:10:53 by ztouzri           #+#    #+#             */
+/*   Updated: 2021/11/12 15:40:41 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
+# include "AMateria.hpp"
 
-AMateria::AMateria(std::string const & type) : _type(type)
+class MateriaSource
 {
-	std::cout << "AMateria constructor" << std::endl;
-}
+public:
+	MateriaSource(void);
+	~MateriaSource(void);
 
-AMateria::~AMateria(void)
-{
-	std::cout << "AMateria destructor" << std::endl;
-}
+	void learnMateria(AMateria*);
+	AMateria* createMateria(std::string const & type);
 
-std::string const & AMateria::getType(void) const
-{
-	return (this->_type);
-}
+	AMateria*	learned[4];
+};
 
-void	AMateria::use(ICharacter& target)
-{
-	std::cout << "AMateria used on " << target.getName() << std::endl;
-}
+#endif
