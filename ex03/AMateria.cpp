@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Amateria.hpp                                       :+:      :+:    :+:   */
+/*   Amateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/12 08:53:37 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/11/12 09:36:09 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/11/12 08:56:52 by ztouzri           #+#    #+#             */
+/*   Updated: 2021/11/12 09:49:42 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
-# include <iostream>
-# include "ICharacter.hpp"
+#include "AMateria.hpp"
 
-class ICharacter;
-
-class AMateria
+AMateria::AMateria(std::string const & type) : _type(type)
 {
+	std::cout << "AMateria constructor" << std::endl;
+}
 
-public:
-	AMateria(std::string const & type);
-	virtual	~AMateria(void);
-	
-	std::string const & getType(void) const;
+AMateria::~AMateria(void)
+{
+	std::cout << "AMateria destructor" << std::endl;
+}
 
-	virtual AMateria* clone() const = 0;
-	virtual void use(ICharacter& target);
-
-protected:
-	std::string const & _type;
-
-};
-
-#endif
+void	AMateria::use(ICharacter& target)
+{
+	std::cout << "AMateria used on " << target.getName() << std::endl;
+}
