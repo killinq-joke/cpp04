@@ -1,7 +1,7 @@
 CC		= clang++
-CFLAGS	= -Wall -Wextra -Werror -fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror -g
 NAME	= exec
-SRCS	= main.cpp Character.cpp AMateria.cpp Ice.cpp
+SRCS	= main.cpp Character.cpp AMateria.cpp Ice.cpp Cure.cpp MateriaSource.cpp
 OBJS	= $(SRCS:cpp=o)
 
 all: $(NAME)

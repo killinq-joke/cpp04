@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 12:11:42 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/11/12 15:40:17 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/11/13 13:28:51 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,9 @@ AMateria*	MateriaSource::createMateria(std::string const & type)
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->learned[i] != nullptr && this->learned[i]->getType() == type)
+		{
 			return (this->learned[i]->clone());
+		}
 	}
-	return (nullptr)
+	return (nullptr);
 }

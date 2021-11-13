@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 09:17:40 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/11/12 15:44:12 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/11/12 16:11:52 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Character::Character(Character const & c1) : _name(c1.getName())
 
 Character	Character::operator=(Character const & c1)
 {
-	// this->_name = c1.getName();
+	this->_name = c1.getName();
 	std::cout << "Character assignation operator" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
