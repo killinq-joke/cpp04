@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 08:49:41 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/11/13 13:05:53 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/11/14 14:31:05 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ int main()
 	src->learnMateria(new Ice());
 
 	ICharacter* me = new Character("me");
-	// AMateria* cure = new Cure();
-	// me->equip(cure);
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
 	me->equip(tmp);

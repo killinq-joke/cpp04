@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/12 12:11:42 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/11/13 13:28:51 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/11/13 15:32:25 by ztouzri           #+#    #+#             */
+/*   Updated: 2021/11/14 15:30:03 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,36 @@
 
 MateriaSource::MateriaSource(void)
 {
+	std::cout << "MateriaSource constructor" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		this->learned[i] = nullptr;
 	}
-	std::cout << "MateriaSource constructor" << std::endl;
+}
+
+MateriaSource::MateriaSource(MateriaSource const & m1)
+{
+	std::cout << "MateriaSource copy constructor" << std::endl;
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->learned[i] != nullptr)
+			this->learned[i] = m1.learned[i]->clone();
+		else
+			this->learned[i] = nullptr;
+	}
+}
+
+MateriaSource	MateriaSource::operator=(MateriaSource const & m1)
+{
+	std::cout << "MateriaSource copy constructor" << std::endl;
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->learned[i] != nullptr)
+			this->learned[i] = m1.learned[i]->clone();
+		else
+			this->learned[i] = nullptr;
+	}
+	return (*this);
 }
 
 MateriaSource::~MateriaSource(void)
@@ -33,7 +58,7 @@ void	MateriaSource::learnMateria(AMateria* m)
 		if (this->learned[i] == nullptr)
 		{
 			this->learned[i] = m;
-			break;
+			break ;
 		}
 	}
 }
@@ -43,9 +68,7 @@ AMateria*	MateriaSource::createMateria(std::string const & type)
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->learned[i] != nullptr && this->learned[i]->getType() == type)
-		{
 			return (this->learned[i]->clone());
-		}
 	}
 	return (nullptr);
 }

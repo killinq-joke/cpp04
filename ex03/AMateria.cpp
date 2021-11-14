@@ -5,16 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/12 08:56:52 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/11/12 11:07:23 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/11/13 14:44:54 by ztouzri           #+#    #+#             */
+/*   Updated: 2021/11/14 15:31:17 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria(std::string const & type) : _type(type)
+AMateria::AMateria(std::string const & type) : type(type)
 {
 	std::cout << "AMateria constructor" << std::endl;
+}
+
+AMateria::AMateria(AMateria const & a1) : type(a1.getType())
+{
+	std::cout << "AMateria copy constructor" << std::endl;
 }
 
 AMateria::~AMateria(void)
@@ -22,12 +27,17 @@ AMateria::~AMateria(void)
 	std::cout << "AMateria destructor" << std::endl;
 }
 
-std::string const & AMateria::getType(void) const
+std::string const & AMateria::getType() const
 {
-	return (this->_type);
+	return (this->type);
 }
 
-void	AMateria::use(ICharacter& target)
+void	AMateria::setType(std::string const & type)
 {
-	std::cout << "AMateria used on " << target.getName() << std::endl;
+	this->type = type;
+}
+
+void		AMateria::use(ICharacter& target)
+{
+	(void)target;
 }

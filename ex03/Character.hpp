@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/12 09:18:46 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/11/12 16:02:46 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/11/13 15:01:18 by ztouzri           #+#    #+#             */
+/*   Updated: 2021/11/13 16:19:48 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,13 @@ public:
 	Character operator=(Character const & c1);
 	~Character(void);
 
-	std::string const & getName(void) const;
-	void				equip(AMateria* m);
-	void				unequip(int idx);
-	void				use(int idx, ICharacter& target);
-
-	AMateria*			inventory[4];
-
-private:
-	std::string _name;
+	std::string const & getName() const;
+	void equip(AMateria* m);
+	void unequip(int idx);
+	void use(int idx, ICharacter& target);
+	
+	AMateria* inventory[4];
+	std::string name;
 };
 
 #endif

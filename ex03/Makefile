@@ -1,7 +1,7 @@
 CC		= clang++
-CFLAGS	= -Wall -Wextra -Werror -g
+CFLAGS	= -Wall -Wextra -Werror
 NAME	= exec
-SRCS	= main.cpp Character.cpp AMateria.cpp Ice.cpp Cure.cpp MateriaSource.cpp
+SRCS	= main.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp AMateria.cpp
 OBJS	= $(SRCS:cpp=o)
 
 all: $(NAME)
